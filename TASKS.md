@@ -23,5 +23,21 @@ Security (`test_security.py`)
 
 **Goal:** all 5 tasks done AND all 11 tests green (`pytest -q`). Then `pytest --cov=app`.
 
+## Test Results
+
+Command: python -m pytest -q
+
+Result: 11 passed, 0 failed
+
+Coverage command: python -m pytest --cov=app
+
+Code coverage: 96%
+
+Coverage details: 104 statements, 4 missed
+
+Warnings: 6 non-blocking deprecation warnings from python-jose
+
+The test suite verifies authentication, authorization, secure password handling, note ownership, and administrative access control.
+
 ## Reflection (4–5 sentences)
 A key security test I implemented, test_user_cannot_read_another_users_note, verifies whether a user is blocked from accessing another user's private note. By confirming that the API returns HTTP 403 when Alice tries to access Bob's note, this test addresses OWASP A01: Broken Access Control. If a teammate were to accidentally remove the ownership check from get_note(), users might be able to access private information belonging to others. The automated test would catch this vulnerability by failing whenever the expected 403 response is not returned. This activity helped me grasp how security testing safeguards user data and keeps previously fixed vulnerabilities from being reintroduced.
