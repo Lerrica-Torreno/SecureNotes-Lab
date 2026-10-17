@@ -12,6 +12,7 @@ API (`test_api.py`)
 - [x] register then login returns a JWT (three dotted parts)
 - [x] wrong password returns 401
 - [x] create a note, then see it in your list
+- [x] home endpoint returns the expected successful response
 
 Security (`test_security.py`)
 - [x] bad token rejected (401)
@@ -20,6 +21,7 @@ Security (`test_security.py`)
 - [x] same login error for bad user vs bad password  ← A07
 - [x] a non-admin can't list users (403)  ← A01
 - [x] admin list has no password field  ← A04
+- [x] missing authentication token rejected (401)
 
 **Goal:** all 5 tasks done AND all 11 tests green (`pytest -q`). Then `pytest --cov=app`.
 
